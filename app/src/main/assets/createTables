@@ -1,0 +1,24 @@
+CREATE TABLE IF NOT EXISTS graphs(
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	name TEXT
+);
+
+CREATE TABLE IF NOT EXISTS nodes (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	graph INTEGER REFERENCES graphs (id),
+	x FLOAT,
+	y FLOAT,
+	name TEXT
+);
+
+CREATE TABLE IF NOT EXISTS links (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	firstNode INTEGER REFERENCES nodes (id),
+	secondNode INTEGER REFERENCES nodes (id),
+);
+
+ALTER TABLE nodes ADD CONSTRAINT fk_nodes_graph_id FOREIGN KEY (graph) REFERENCES graphs (id);
+
+ALTER TABLE links ADD CONSTRAINT fk_links_firstNode_id FOREIGN KEY (firstNode) REFERENCES nodes (id);
+
+ALTER TABLE links ADD CONSTRAINT fk_links_secondNode_id FOREIGN KEY (secondNode) REFERENCES nodes (id);

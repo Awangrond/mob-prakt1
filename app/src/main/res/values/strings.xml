@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">prakt1</string>
+    <string name="add_graph">Создание графа</string>
+    <string name="edit_graph">Редактирование графа</string>
+    <string name="add_node">Добавление точки на граф</string>
+    <string name="add_link">Добавление связи</string>
+    <string name="new_text">new</string>
+    <string name="edit_text">edit</string>
+    <string name="delete_text">delete</string>
+    <string name="copy_text">copy</string>
+</resources>
